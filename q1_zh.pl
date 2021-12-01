@@ -44,9 +44,9 @@ sem1(sem:S, S) if true.
 
 % Define your Lexical items
 
-yi ---> (num, count:one).
-liang ---> (num, count:two).
-san ---> (num, count:three).
+yi ---> (num, sem:count:one).
+liang ---> (num, sem:count:two).
+san ---> (num, sem:count:three).
 mao ---> (n, sem:cat, agr:cl_type:zhi).
 gou ---> (n, sem:dog, agr:cl_type:zhi).
 gou ---> (n, sem:dog, agr:cl_type:tiao).
@@ -80,4 +80,4 @@ cat> (np, sem:Sem, agr:Agr).
 s rule
 (s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
 cat> (np, sem:Sem, agr:Agr),
-cat> (vp, agr:Agr, subcat:[Subj|Rest]).
+sem_head> (vp, agr:Agr, subcat:[Subj|Rest]).

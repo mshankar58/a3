@@ -46,7 +46,7 @@ sem1(sem:S, S) if true.
 a ---> (det, sem:count:one, agr:number:sing).
 one ---> (num, sem:count:one, agr:number:sing).
 two ---> (num, sem:count:two, agr:number:plural).
-three ---> (num, count:three, agr:number:plural).
+three ---> (num, sem:count:three, agr:number:plural).
 cat ---> (n, sem:cat, agr:number:sing).
 cats ---> (n, sem:cat, agr:number:plural).
 dog ---> (n, sem:dog, agr:number:sing).
@@ -74,7 +74,7 @@ sem_head> (n, sem:Sem, agr:Agr).
 
 vp rule
 (vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
-sem_head> (verbal, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
+sem_head> (v, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
 cat> (np, sem:Sem, agr:Agr).
 
 s rule
