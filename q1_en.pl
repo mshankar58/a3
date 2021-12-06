@@ -19,7 +19,7 @@
 lan(en).
 question(q1).
 
-bot sub [cate, sem, agr, number, list].
+bot sub [cate, sem, agr, number, count, list].
     sem sub [n_sem, v_sem].
         n_sem sub [cat, dog, professor] intro [count:count].
         v_sem sub [see, chase] intro [subj:sem, obj:sem].
