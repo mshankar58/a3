@@ -26,7 +26,7 @@ bot sub [cate, sem, agr, number, list].
 
     cate sub [nominal, verbal] intro [agr:agr, sem:sem].
         nominal sub [n, np, det, num] intro [sem:n_sem].
-        verbal sub [v, vp, s ] intro [sem:v_sem, subcat:list].
+        verbal sub [v, vp, s] intro [sem:v_sem, subcat:list].
 
     % Define your agreement
     agr intro [number:number].
@@ -43,10 +43,10 @@ sem1(sem:S, S) if true.
 
 % Define your Lexicons
 
-% a ---> (det, sem:count:one, agr:number:sing).
-% one ---> (num, sem:count:one, agr:number:sing).
-% two ---> (num, sem:two, agr:number:plural).
-% three ---> (num, sem:count:three, agr:number:plural).
+a ---> (det, sem:count:one, agr:number:sing).
+one ---> (num, sem:count:one, agr:number:sing).
+two ---> (num, sem:two, agr:number:plural).
+three ---> (num, sem:count:three, agr:number:plural).
 cat ---> (n, sem:cat, agr:number:sing).
 cats ---> (n, sem:cat, agr:number:plural).
 dog ---> (n, sem:dog, agr:number:sing).
