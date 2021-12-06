@@ -44,9 +44,9 @@ sem1(sem:S, S) if true.
 % Define your Lexicons
 
 a ---> (det, sem:count:one, agr:number:sing).
-one ---> (num, sem:count:one, agr:number:sing).
-two ---> (num, sem:count:two, agr:number:plural).
-three ---> (num, sem:count:three, agr:number:plural).
+% one ---> (num, sem:count:one, agr:number:sing).
+% two ---> (num, sem:count:two, agr:number:plural).
+% three ---> (num, sem:count:three, agr:number:plural).
 cat ---> (n, sem:cat, agr:number:sing).
 cats ---> (n, sem:cat, agr:number:plural).
 dog ---> (n, sem:dog, agr:number:sing).
