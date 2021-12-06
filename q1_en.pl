@@ -44,7 +44,7 @@ sem1(sem:S, S) if true.
 % Define your Lexicons
 
 a ---> (det, sem:count:one, agr:number:sing).
-% one ---> (num, sem:count:one, agr:number:sing).
+one ---> (num, sem:count:one, agr:number:sing).
 % two ---> (num, sem:count:two, agr:number:plural).
 % three ---> (num, sem:count:three, agr:number:plural).
 cat ---> (n, sem:cat, agr:number:sing).
@@ -53,11 +53,11 @@ dog ---> (n, sem:dog, agr:number:sing).
 dogs ---> (n, sem:dog, agr:number:plural).
 professor ---> (n, sem:professor, agr:number:sing).
 professors ---> (n, sem:professor, agr:number:plural).
-see ---> (v, sem:see, agr:number:plural).
-sees ---> (v, sem:see, agr:number:sing).
-saw ---> (v, sem:see).
-chase ---> (v, sem:chase, agr:number:plural).
-chases ---> (v, sem:chase, agr:number:sing).
+see ---> (v, sem:see, agr:number:plural, subcat:[]).
+sees ---> (v, sem:see, agr:number:sing, subcat:[]).
+saw ---> (v, sem:see, subcat:[]).
+chase ---> (v, sem:chase, agr:number:plural, subcat:[]).
+chases ---> (v, sem:chase, agr:number:sing, subcat:[]).
 
 % Define your Rules
 
