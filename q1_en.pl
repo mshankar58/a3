@@ -53,11 +53,11 @@ dog ---> (n, sem:dog, agr:number:sing).
 dogs ---> (n, sem:dog, agr:number:plural).
 professor ---> (n, sem:professor, agr:number:sing).
 professors ---> (n, sem:professor, agr:number:plural).
-see ---> (v, sem:see, agr:number:plural, subcat:[]).
-sees ---> (v, sem:see, agr:number:sing, subcat:[]).
+see ---> (v, sem:see, agr:number:plural, subcat:[(Obj, np)]).
+sees ---> (v, sem:see, agr:number:sing, subcat:[(Obj, np)]).
 saw ---> (v, sem:see, subcat:[]).
-chase ---> (v, sem:chase, agr:number:plural, subcat:[]).
-chases ---> (v, sem:chase, agr:number:sing, subcat:[]).
+chase ---> (v, sem:chase, agr:number:plural, subcat:[(Obj, np)]).
+chases ---> (v, sem:chase, agr:number:sing, subcat:[(Obj, np)]).
 
 % Define your Rules
 
@@ -75,7 +75,7 @@ sem_head> (n, sem:Sem, agr:Agr).
 vp rule
 (vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
 sem_head> (v, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
-cat> (np, sem:Sem, agr:Agr).
+cat> Obj.
 
 s rule
 (s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
