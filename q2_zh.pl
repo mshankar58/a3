@@ -1,6 +1,6 @@
-% Student name: Maya Shankar
-% Student number: 1005795052
-% UTORid: shanka58
+% Student name: NAME
+% Student number: NUMBER
+% UTORid: ID
 
 % This code is provided solely for the personal and private use of students
 % taking the CSC485H/2501H course at the University of Toronto. Copying for
@@ -92,10 +92,10 @@ xuesheng ---> (n,
 
 % 读过: read
 duguo ---> (v,
-    sem:(read, Read),
     % logic:none,
     % qstore:[],
-    subcat:[(np, sem:book), (np, sem:student)]).
+    subcat:[], % the subcat list should not be empty
+    sem:(read, Read)).
 
 % Phrase structure rules (incomplete)
 np rule
@@ -135,7 +135,7 @@ append([H|T1],L2,[H|T2]) if append(T1,L2,T2).
 is_empty([]) if true.
 
 % Beta reduction goal
-% beta_reduction(X, F, F(X))
+% beta_reduction(F, X, F(X))
 beta_reduction((lambda:X, rest:Result), X, Result) if true.
 
 % Quantifier actions
@@ -145,9 +145,12 @@ quantifier_action(Logic, QStore, NewLogic, NewQStore) if
 quantifier_action(Logic, QStore, NewLogic, NewQStore) if
     store(Logic, QStore, NewLogic, NewQStore).
 
-% Apply and store
+% Apply, store, and retrieve
 apply(Logic, QStore, Logic, QStore) if true.
 store(Logic, QStore, (lambda:(F, lambda:X), rest:F), NewQStore) if append([(l:Logic, x:X)], QStore, NewQStore).
+
+retrieve((Empty, []), Logic, Empty, Logic) if true.
+retrieve([(l:QLogic, x:X)|T], Logic, T, NewLogic) if beta_reduction(QLogic, (lambda:X, rest:Logic), NewLogic).
 
 % Your helper goals:
 

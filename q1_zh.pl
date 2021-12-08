@@ -1,6 +1,6 @@
-% Student name: Maya Shankar
-% Student number: 1005795052
-% UTORid: shanka58
+% Student name: NAME
+% Student number: NUMBER
+% UTORid: ID
 
 % This code is provided solely for the personal and private use of students
 % taking the CSC485H/2501H course at the University of Toronto. Copying for
@@ -28,10 +28,10 @@ bot sub [cate, sem, agr, cl_types].
 
     cate sub [nominal, verbal] intro [agr:agr, sem:sem].
         nominal sub [n, np, clp, num, cl] intro [sem:n_sem].
-        verbal sub [v, vp, s ] intro [sem:v_sem, subcat:list].
+        verbal sub [v, vp, s] intro [sem:v_sem, subcat:list].
 
     % Define your agreement
-    agr intro [cl_type:cl_types].
+    agr intro [].
 
     count sub [one, two, three].
 
@@ -61,7 +61,6 @@ tiao ---> (cl, agr:cl_type:tiao).
 
 % Define your Rules
 
-
 clp rule
 (clp, agr:Agr) ===>
 cat> (num),
@@ -70,14 +69,4 @@ sem_head> (cl, agr:Agr).
 np rule
 (np, sem:Sem, agr:Agr) ===>
 cat> (clp, agr:Agr),
-sem_head> (n, sem:Sem, agr:Agr).
-
-vp rule
-(vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
-sem_head> (v, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
-cat> (np, sem:Sem, agr:Agr).
-
-s rule
-(s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
-cat> (np, sem:Sem, agr:Agr),
-sem_head> (vp, agr:Agr, subcat:[Subj|Rest]).
+sem_head> (nominal, sem:Sem, agr:Agr).

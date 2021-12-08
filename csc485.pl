@@ -108,21 +108,21 @@ mypp_fs_default(Type,FS,MGType,KeyedFeats,Dups,Inf,VisIn,VisOut,Col,HDIn,HDOut) 
                     true
                     ;
                     MGType == 0 ->
-                        write(mgsat)
+                        write(bot)  % wuz mgsat, but this needs to be a desc
                         ;
                         approps(MGType,_,0) ->
                             write(MGType) % MGType had no features anyway
                             ;
-                            write('mgsat('),
-                            write(MGType),
-                            write(')')
+%                            write('mgsat('), % need a valid description
+                            write(MGType)
+%                            write(')')
                 )
                 ;
                 avl_store(FS,VisIn,_,VisMid),         % print FS if not already visited
                 (
                     no_write_type_flag(Type) ->
                         my_pp_vs_unwritten(KeyedFeats,Dups,Inf,VisMid,VisOut,Col,HDIn,HDOut)
-                        ;
+                        ; 
                         lb,
                         write(Type),
                         (KeyedFeats = [] -> true ; comma),
@@ -142,7 +142,7 @@ my_pp_vs([fval(F,V,R)|KFs],Dups,Inf,VisIn,VisOut,Col,HDIn,HDOut) :-
          avl_fetch(V,Inf,Inform),
          var(Inform)) -> VisMid = VisIn, HDMid = HDIn
     ;
-        my_write_feature(F,LengthF),
+        my_write_feature(F,LengthF), 
         NewCol is Col + LengthF +1,
         my_pp_fs(V,R,Dups,Inf,VisIn,VisMid,NewCol,HDIn,HDMid)
     ),
@@ -155,7 +155,7 @@ my_pp_vs_unwritten([fval(F,V,R)|KFs],Dups,Inf,VisIn,VisOut,Col,HDIn,HDOut):-
     ; (ale_flag(sparseoutput,on),
          avl_fetch(V,Inf,Inform),
          var(Inform)) -> VisMid = VisIn, HDMid = HDIn
-    ; my_write_feature(F,LengthF),
+    ; my_write_feature(F,LengthF), 
         NewCol is Col + LengthF +1,
         my_pp_fs(V,R,Dups,Inf,VisIn,VisMid,NewCol,HDIn,HDMid)
     ),
@@ -178,8 +178,8 @@ rb :- write(')').
 
 get_parse_tree(Ws, Tree) :- rec(Ws, FS, Desc, Residue, Index),
     (ale_lists_defined ->
-        clause(fcolour(hd,HdPos,_),true),
-        clause(fcolour(tl,TlPos,_),true),
+        clause(fcolour(hd,HdPos,_),true), 
+        clause(fcolour(tl,TlPos,_),true), 
         relink_parse_tree(FS,Ws,Index,Tree,[_FS|TreeFSs],[],HdPos,TlPos);
         relink_parse_tree(FS,Ws,Index,Tree,[_FS|TreeFSs],[])).
 
@@ -266,7 +266,7 @@ print_logic(Logic, Dict) :-
 print_list(List, Dict, _) :-
     get_type(List, e_list).
 
-print_list(List, Dict, IsFirst) :-
+print_list(List, Dict, IsFirst) :- 
     get_type(List, ne_list),
     get_feat(hd, List, H),
     get_feat(tl, List, T),
