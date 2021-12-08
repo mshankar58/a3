@@ -44,8 +44,8 @@ sem1(sem:S, S) if true.
 % Define your Lexicons
 
 a ---> (det, sem:count:one, agr:number:sing).
-one ---> (num, sem:n_sem:count:one, agr:number:sing).
-two ---> (num, sem:n_sem:count:two, agr:number:plural).
+one ---> (num, sem:count:one, agr:number:sing).
+two ---> (num, sem:count:two, agr:number:plural).
 three ---> (num, sem:count:three, agr:number:plural).
 cat ---> (n, sem:cat, agr:number:sing).
 cats ---> (n, sem:cat, agr:number:plural).
@@ -65,19 +65,19 @@ chases ---> (v, sem:chase, agr:number:sing, subcat:[(Obj, np)]).
 np_det rule
 (np, sem:Sem, agr:Agr) ===>
 cat> (det, agr:Agr),
-sem_head> (n, sem:Sem, agr:Agr).
+sem_head> (nominal, sem:Sem, agr:Agr).
 
 np_num rule
 (np, sem:Sem, agr:Agr) ===>
 cat> (num, agr:Agr),
-sem_head> (n, sem:Sem, agr:Agr).
+sem_head> (nominal, sem:Sem, agr:Agr).
 
 vp rule
 (vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
-sem_head> (v, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
+sem_head> (verbal, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
 cat> Obj.
 
 s rule
 (s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
-cat> (np, sem:Sem, agr:Agr),
+cat> (Subj, sem:Sem, agr:Agr),
 cat> (vp, agr:Agr, subcat:[Subj|Rest]).
