@@ -31,7 +31,7 @@ bot sub [cate, sem, agr, cl_types].
         verbal sub [v, vp, s] intro [sem:v_sem, subcat:list].
 
     % Define your agreement
-    agr intro [].
+    agr intro [cl_type:cl_types].
 
     count sub [one, two, three].
 
