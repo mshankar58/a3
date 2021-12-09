@@ -75,7 +75,7 @@ sem_head> (nominal, sem:Sem, agr:Agr).
 vp rule
 (vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
 sem_head> (verbal, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
-cat> (np, agr:Agr).
+cat> (np).
 
 s rule
 (s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
