@@ -17,8 +17,18 @@
 
 1(c)
 
+For the sentence "Two cats chase one dog", my translation outputs "" and Google Translate outputs "Liǎng zhī māo zhuī yī zhǐ gǒu"
+For the sentence "Yī gè jiàoshòu zhuī liǎng tiáo gǒu", my translation outputs "" and Google Translate outputs "A professor chasing two dogs"
+
 
 2(a)
 
+(29a) exists student read => forall book.
+(29b) forall student read => exists book.
+(30) exists ge xuesheng dugou forall ben shu (exists student read forall book)
+
 
 2(e)
+
+For the sentence "A student read every book", my translation outputs "" and Google Translate outputs "Yī gè xuéshēng dúle měi yī běn shū"
+For the sentence "Yī gè xuéshēng dúguò měi běn shū", my translation outputs "" and Google Translate outputs "A student read every book"

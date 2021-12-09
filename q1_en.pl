@@ -53,9 +53,9 @@ dog ---> (n, sem:dog, agr:number:sing).
 dogs ---> (n, sem:dog, agr:number:plural).
 professor ---> (n, sem:professor, agr:number:sing).
 professors ---> (n, sem:professor, agr:number:plural).
-see ---> (v, sem:see, agr:number:plural, subj:Subj, obj:Obj).
+see ---> (v, sem:(see, subj:Subj, obj:Obj), agr:number:plural).
 sees ---> (v, sem:see, agr:number:sing).
-saw ---> (v, sem:see, subcat:[]).
+saw ---> (v, sem:see).
 chase ---> (v, sem:chase, agr:number:plural).
 chases ---> (v, sem:chase, agr:number:sing).
 
