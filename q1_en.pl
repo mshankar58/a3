@@ -53,11 +53,11 @@ dog ---> (n, sem:dog, agr:number:sing).
 dogs ---> (n, sem:dog, agr:number:plural).
 professor ---> (n, sem:professor, agr:number:sing).
 professors ---> (n, sem:professor, agr:number:plural).
-see ---> (v, sem:(see, subj:Subj, obj:Obj), agr:number:plural).
-sees ---> (v, sem:see, agr:number:sing).
-saw ---> (v, sem:see).
-chase ---> (v, sem:chase, agr:number:plural).
-chases ---> (v, sem:chase, agr:number:sing).
+see ---> (v, sem:(see, subj:Subj, obj:Obj), agr:number:plural, subcat:[Subj, Obj]).
+sees ---> (v, sem:see, agr:number:sing, subcat:[Subj, Obj]).
+saw ---> (v, sem:see, subcat:[Subj, Obj]).
+chase ---> (v, sem:chase, agr:number:plural, subcat:[Subj, Obj]).
+chases ---> (v, sem:chase, agr:number:sing, subcat:[Subj, Obj]).
 
 % Define your Rules
 
