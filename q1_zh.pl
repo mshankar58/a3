@@ -70,3 +70,13 @@ np rule
 (np, sem:Sem, agr:Agr) ===>
 cat> (clp, agr:Agr),
 sem_head> (nominal, sem:Sem, agr:Agr).
+
+vp rule
+(vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
+sem_head> (verbal, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
+cat> (np).
+
+s rule
+(s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
+cat> (np, agr:Agr),
+sem_head> (vp, agr:Agr, subcat:[Subj|Rest]).
