@@ -52,8 +52,8 @@ gou ---> (n, sem:dog, agr:cl_type:zhi).
 gou ---> (n, sem:dog, agr:cl_type:tiao).
 jiaoshou ---> (n, sem:professor, agr:cl_type:ge).
 jiaoshou ---> (n, sem:professor, agr:cl_type:wei).
-kanjian ---> (v, sem:see).
-zhui ---> (v, sem:chase).
+kanjian ---> (v, sem:(see, subj:Subj, obj:Obj)).
+zhui ---> (v, sem:(chase, subj:Subj, obj:Obj)).
 ge ---> (cl, agr:cl_type:ge).
 wei ---> (cl, agr:cl_type:wei).
 zhi ---> (cl, agr:cl_type:zhi).
