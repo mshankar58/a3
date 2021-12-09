@@ -65,16 +65,16 @@ chases ---> (v, sem:chase, agr:number:sing, subcat:[Subj, Obj]).
 np_det rule
 (np, sem:Sem, agr:Agr) ===>
 cat> (det, agr:Agr),
-sem_head> (nominal, sem:Sem, agr:Agr).
+sem_head> (n, sem:Sem, agr:Agr).
 
 np_num rule
 (np, sem:Sem, agr:Agr) ===>
 cat> (num, agr:Agr),
-sem_head> (nominal, sem:Sem, agr:Agr).
+sem_head> (n, sem:Sem, agr:Agr).
 
 vp rule
 (vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
-sem_head> (verbal, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
+sem_head> (v, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
 cat> (np).
 
 s rule
