@@ -62,13 +62,13 @@ tiao ---> (cl, agr:cl_type:tiao).
 % Define your Rules
 
 clp rule
-(clp, sem:Sem, agr:Agr) ===>
-cat> (num, sem:Sem),
+(clp, sem:count:Count, agr:Agr) ===>
+cat> (num, sem:count:Count),
 sem_head> (cl, agr:Agr).
 
 np rule
-(np, sem:Sem, agr:Agr) ===>
-cat> (clp, agr:Agr),
+(np, sem:(Sem, count:Count), agr:Agr) ===>
+cat> (clp, sem:count:Count, agr:Agr),
 sem_head> (n, sem:Sem, agr:Agr).
 
 vp rule
