@@ -57,11 +57,13 @@ a ---> (
 book ---> (n,
     % logic:none,
     % qstore:[],
+    gap:none,
     sem:(book, Book)).
 
 student ---> (n,
     % logic:none,
     % qstore:[],
+    gap:none,
     sem:(student, Student)).
 
 read ---> (v,
@@ -70,26 +72,26 @@ read ---> (v,
     subcat:[(Obj, np, sem:Book), (Subj, np, sem:Student)],
     sem:(read, Read)).
 
-% Phrase structure rules (incomplete)
+% Phrase structure rules
 np rule
-    (np) ===>
+    (np, sem:Sem) ===>
     cat> (q),
-    sem_head> (n).
+    sem_head> (n, sem:Sem).
 
 vp rule
     (vp, sem:Sem, subcat:Rest) ===>
-    sem_head> (v),
-    cat> (np).
+    sem_head> (v, sem:Sem),
+    cat> (np, sem:Book).
 
 s rule
     (s, sem:Sem, subcat:(Rest, [])) ===>
-    cat> (np, NP),
+    cat> (np, sem:Student),
     sem_head> (vp, sem:Sem, subcat:[NP|Rest]).
 
 s_gap rule
     (s, sem:Sem, subcat:(Rest, [])) ===>
     cat> (Gap),
-    cat> (np, NP, sem:book),
+    cat> (np, NP, sem:Student),
     sem_head> (vp, sem:Sem, subcat:[NP|Rest]).
 
 % The empty category:
