@@ -29,12 +29,12 @@ bot sub [cat, sem, list, logic, gap_struct, agr].
 
     sem sub [student, book, read].
 
+    agr intro [case:case].
+
+    case sub [subjective, objective].
+
     list sub [e_list, ne_list].
         ne_list intro [hd:bot, tl:list].
-
-    agr intro [role:role]
-
-    role sub [subj, obj]
 
     logic sub [stmt, nested_logic].
         nested_logic sub [scope, lambda_func] intro [rest:logic].
@@ -61,19 +61,19 @@ a ---> (
 book ---> (n,
     % logic:none,
     % qstore:[],
-    agr:role:obj,
+    agr:case:subjective,
     sem:(book, Book)).
 
 student ---> (n,
     % logic:none,
     % qstore:[],
-    agr:role:subj,
+    agr:case:objective,
     sem:(student, Student)).
 
 read ---> (v,
     % logic:none,
     % qstore:[],
-    subcat:[(NP, sem:Student), (NP, sem:Book)],
+    subcat:[(Obj, np, agr:case:objective), (Subj, np, agr:case:subjective)],
     sem:(read, Read)).
 
 % Phrase structure rules (incomplete)
@@ -84,7 +84,7 @@ np rule
 
 vp rule
     (vp, sem:Sem, subcat:Rest) ===>
-    sem_head> (v, sem:Sem, subcat:[NP|Rest]),
+    sem_head> (v),
     cat> (np, NP).
 
 s rule
@@ -93,10 +93,10 @@ s rule
     sem_head> (vp, sem:Sem, subcat:[NP|Rest]).
 
 s_gap rule
-    (s) ===>
+    (s, sem:Sem, subcat:(Rest, [])) ===>
     cat> (Gap),
-    cat> (np),
-    sem_head> (vp).
+    cat> (np, NP),
+    sem_head> (vp, sem:Sem, subcat:[NP|Rest]).
 
 % The empty category:
 empty (np, sem:Sem, logic:Logic, qstore:QStore,
