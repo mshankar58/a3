@@ -1,6 +1,6 @@
-% Student name: NAME
-% Student number: NUMBER
-% UTORid: ID
+% Student name: Maya Shankar
+% Student number: 1005795052
+% UTORid: shanka58
 
 % This code is provided solely for the personal and private use of students
 % taking the CSC485H/2501H course at the University of Toronto. Copying for
@@ -62,13 +62,13 @@ tiao ---> (cl, agr:cl_type:tiao).
 % Define your Rules
 
 clp rule
-(clp, sem:count:Count, agr:Agr) ===>
-cat> (num, sem:count:Count),
+(clp, count:Count, agr:Agr) ===>
+cat> (num, count:Count),
 sem_head> (cl, agr:Agr).
 
 np rule
-(np, sem:(Sem, count:Count), agr:Agr) ===>
-cat> (clp, sem:count:Count, agr:Agr),
+(np, sem:Sem, count:Count), agr:Agr) ===>
+cat> (clp, count:Count, agr:Agr),
 sem_head> (n, sem:Sem, agr:Agr).
 
 vp rule

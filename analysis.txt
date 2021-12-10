@@ -17,26 +17,30 @@
 
 1(c)
 
-For the sentence "Two cats chase one dog", my translation outputs "".
+For the sentence "Two cats chase one dog", my translation outputs
+"liang zhi mao zhui yi zhi gou" and "liang zhi mao zhui yi tiao gou".
 Google Translate outputs "Liǎng zhī māo zhuī yī zhǐ gǒu".
-For the sentence "Yī gè jiàoshòu zhuī liǎng tiáo gǒu", my translation outputs "".
+For the sentence "Yī gè jiàoshòu zhuī liǎng tiáo gǒu", my translation outputs
+"A professor chases two dogs" and "One professor chases two dogs".
 Google Translate outputs "A professor chasing two dogs".
 
-EXPLANATION
+In both cases, the general meaning is the same, and is kept between both versions.
+Google Translate chooses one classifier when translating into Mandarin, and chooses
+one translation of "yi", either "A" or "One", when translating into English. GT also
+uses the progressive verb form "chasing", which is not in my translator's lexicon.
 
 
 2(a)
 
-29a: exists student read forall book.
-29b: forall student read exists book.
-30: exists ge xuesheng dugou forall ben shu (exists student read forall book)
+29a: exists x (student(x) ^ forall y (book(y) => read(x, y)))
+29b: forall y (book(y) => exists x (student(x) ^ read(x, y)))
+30: exists x (xuesheng(x) ^ forall y (shu(y) => duguo(x, y)))
 
 
 2(e)
 
-For the sentence "A student read every book", my translation outputs "".
-Google Translate outputs "Yī gè xuéshēng dúle měi yī běn shū".
-For the sentence "Yī gè xuéshēng dúguò měi běn shū", my translation outputs "".
-Google Translate outputs "A student read every book".
+For the sentence "A student read every book", Google Translate outputs "Yī gè xuéshēng dúle měi yī běn shū".
+For the sentence "Yī gè xuéshēng dúguò měi běn shū", Google Translate outputs "A student read every book".
 
-EXPLANATION
+Google Translate picks a single translation for words that have multiple possible translations, like it did in Question 1.
+Interestingly, GT uses "dúle" instead of "dugou", which incorporates a word that is not in my translator's lexicon.

@@ -1,6 +1,6 @@
-% Student name: NAME
-% Student number: NUMBER
-% UTORid: ID
+% Student name: Maya Shankar
+% Student number: 1005795052
+% UTORid: shanka58
 
 % This code is provided solely for the personal and private use of students
 % taking the CSC485H/2501H course at the University of Toronto. Copying for
