@@ -75,9 +75,9 @@ sem_head> (n, sem:Sem, agr:Agr).
 vp rule
 (vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
 sem_head> (v, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
-cat> (np, sem:Subj).
+cat> (np, sem:Obj).
 
 s rule
 (s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
-cat> (np, agr:Agr),
+cat> (np, sem:Subj, agr:Agr),
 sem_head> (vp, agr:Agr, subcat:[Subj|Rest]).
