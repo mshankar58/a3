@@ -61,7 +61,6 @@ chases ---> (v, sem:chase, agr:number:sing, subcat:[Subj, Obj]).
 
 % Define your Rules
 
-
 np_det rule
 (np, sem:Sem, agr:Agr) ===>
 cat> (det, agr:Agr),
