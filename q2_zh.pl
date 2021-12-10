@@ -94,7 +94,7 @@ xuesheng ---> (n,
 duguo ---> (v,
     % logic:none,
     % qstore:[],
-    subcat:[], % the subcat list should not be empty
+    subcat:[(Obj, np, sem:Book), (Subj, np, sem:Student)],
     sem:(read, Read)).
 
 % Phrase structure rules (incomplete)
