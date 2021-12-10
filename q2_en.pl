@@ -67,7 +67,7 @@ student ---> (n,
 read ---> (v,
     % logic:none,
     % qstore:[],
-    subcat:[], % the subcat list should not be empty
+    subcat:[Student, Book], % the subcat list should not be empty
     sem:(read, Read)).
 
 % Phrase structure rules (incomplete)
@@ -79,11 +79,11 @@ np rule
 vp rule
     (vp) ===>
     sem_head> (v),
-    cat> (np).
+    cat> (np, sem:Book).
 
 s rule
     (s) ===>
-    cat> (np),
+    cat> (np, sem:Student),
     sem_head> (vp).
 
 s_gap rule
