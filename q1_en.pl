@@ -63,13 +63,13 @@ chases ---> (v, sem:chase, agr:number:sing, subcat:[Subj, Obj]).
 
 
 np_det rule
-(np, sem:Sem, count:Count, agr:Agr) ===>
-cat> (det, count:Count, agr:Agr),
+(np, sem:Sem, agr:Agr) ===>
+cat> (det, agr:Agr),
 sem_head> (n, sem:Sem, agr:Agr).
 
 np_num rule
-(np, sem:Sem, count:Count, agr:Agr) ===>
-cat> (num, count:Count, agr:Agr),
+(np, sem:Sem, agr:Agr) ===>
+cat> (num, agr:Agr),
 sem_head> (n, sem:Sem, agr:Agr).
 
 vp rule

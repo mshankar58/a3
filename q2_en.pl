@@ -67,7 +67,7 @@ student ---> (n,
 read ---> (v,
     % logic:none,
     % qstore:[],
-    subcat:[Student, Book], % the subcat list should not be empty
+    subcat:[Subj, Obj],
     sem:(read, Read)).
 
 % Phrase structure rules (incomplete)

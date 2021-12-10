@@ -67,8 +67,8 @@ cat> (num, count:Count),
 sem_head> (cl, agr:Agr).
 
 np rule
-(np, sem:Sem, count:Count), agr:Agr) ===>
-cat> (clp, count:Count, agr:Agr),
+(np, sem:Sem, agr:Agr) ===>
+cat> (clp, agr:Agr),
 sem_head> (n, sem:Sem, agr:Agr).
 
 vp rule
