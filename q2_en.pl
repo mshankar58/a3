@@ -57,13 +57,11 @@ a ---> (
 book ---> (n,
     % logic:none,
     % qstore:[],
-    gap:none,
     sem:(book, Book)).
 
 student ---> (n,
     % logic:none,
     % qstore:[],
-    gap:none,
     sem:(student, Student)).
 
 read ---> (v,
