@@ -63,19 +63,19 @@ chases ---> (v, sem:chase, agr:number:sing, subcat:[Subj, Obj]).
 
 
 np_det rule
-(np, sem:Sem, agr:Agr) ===>
-cat> (det, agr:Agr),
+(np, sem:(Sem, count:Count), agr:Agr) ===>
+cat> (det, sem:count:Count, agr:Agr),
 sem_head> (n, sem:Sem, agr:Agr).
 
 np_num rule
-(np, sem:Sem, agr:Agr) ===>
-cat> (num, agr:Agr),
+(np, sem:(Sem, count:Count), agr:Agr) ===>
+cat> (num, sem:count:Count, agr:Agr),
 sem_head> (n, sem:Sem, agr:Agr).
 
 vp rule
 (vp, sem:Sem, agr:Agr, subcat:(Rest, [_|_])) ===>
 sem_head> (v, sem:Sem, agr:Agr, subcat:[Obj|Rest]),
-cat> (np).
+cat> (np, sem:Subj).
 
 s rule
 (s, sem:Sem, agr:Agr, subcat:([], Rest)) ===>
