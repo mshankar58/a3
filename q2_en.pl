@@ -21,17 +21,13 @@ question(q2).
 
 bot sub [cat, sem, list, logic, gap_struct, agr].
     cat sub [q, det, gappable, has_sem] intro [logic:logic, qstore:list].
-        has_sem sub [n, gappable] intro [sem:sem].
+        has_sem sub [n, gappable] intro [sem:sem, agr:agr].
             gappable sub [np, verbal] intro [gap:gap_struct].
                 verbal sub [v, vp, s] intro [subcat:list].
 
     gap_struct sub [none, np].
 
     sem sub [student, book, read].
-
-    agr intro [case:case].
-
-    case sub [subjective, objective].
 
     list sub [e_list, ne_list].
         ne_list intro [hd:bot, tl:list].
@@ -61,19 +57,17 @@ a ---> (
 book ---> (n,
     % logic:none,
     % qstore:[],
-    agr:case:subjective,
     sem:(book, Book)).
 
 student ---> (n,
     % logic:none,
     % qstore:[],
-    agr:case:objective,
     sem:(student, Student)).
 
 read ---> (v,
     % logic:none,
     % qstore:[],
-    subcat:[(Obj, np, agr:case:objective), (Subj, np, agr:case:subjective)],
+    subcat:[(Obj, np, sem:(book, Book)), (Subj, np, sem:(student, Student))],
     sem:(read, Read)).
 
 % Phrase structure rules (incomplete)
